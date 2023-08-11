@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-3s&bgq5n22qwfxkjr@94hdmxk870cwsr9qmx+5yv!vnoc=_ey8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mainportfolio.urls'
@@ -76,7 +78,6 @@ WSGI_APPLICATION = 'mainportfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#PGPASSWORD=4Ga4SOXgH37A9edmiF1W psql -h containers-us-west-77.railway.app -U postgres -p 7067 -d railway
 #PGPASSWORD=Isd8PLcrpZJnxEgsjzr3 psql -h containers-us-west-86.railway.app -U postgres -p 5443 -d railway
 
 DATABASES = {
@@ -86,7 +87,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'Isd8PLcrpZJnxEgsjzr3',
         'HOST': 'containers-us-west-86.railway.app', 
-        'PORT': '7067',
+        'PORT': '5443',
     }
 }
 
@@ -139,6 +140,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
