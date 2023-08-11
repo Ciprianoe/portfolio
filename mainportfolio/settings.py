@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'mainportfolio.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 #PGPASSWORD=4Ga4SOXgH37A9edmiF1W psql -h containers-us-west-77.railway.app -U postgres -p 7067 -d railway
-
+#PGPASSWORD=Isd8PLcrpZJnxEgsjzr3 psql -h containers-us-west-86.railway.app -U postgres -p 5443 -d railway
 
 
 DATABASES = {
     'default': dj_database_url.config(       
-        default='postgresql://postgres:containers-us-west-77.railway.app:7067/railway',
+        default='postgresql://postgres:containers-us-west-86.railway.app:7067/railway',
         conn_max_age=600)
 
 
