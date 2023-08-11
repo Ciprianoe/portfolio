@@ -79,8 +79,21 @@ WSGI_APPLICATION = 'mainportfolio.wsgi.application'
 #PGPASSWORD=4Ga4SOXgH37A9edmiF1W psql -h containers-us-west-77.railway.app -U postgres -p 7067 -d railway
 #PGPASSWORD=Isd8PLcrpZJnxEgsjzr3 psql -h containers-us-west-86.railway.app -U postgres -p 5443 -d railway
 
-
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'railway', 
+        'USER': 'postgres',
+        'PASSWORD': 'Isd8PLcrpZJnxEgsjzr3',
+        'HOST': 'containers-us-west-86.railway.app', 
+        'PORT': '7067',
+    }
+}
+
+
+
+
+""" DATABASES = {
     'default': dj_database_url.config(       
         default='postgresql://postgres:containers-us-west-86.railway.app:7067/railway',
         conn_max_age=600)
@@ -88,7 +101,7 @@ DATABASES = {
 
          #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
-}
+} """
 
 
 # Password validation
