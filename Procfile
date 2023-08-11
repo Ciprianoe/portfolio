@@ -1,0 +1,1 @@
+web: python manane.py migarte && gunicorn mainportfolio.wsgi
