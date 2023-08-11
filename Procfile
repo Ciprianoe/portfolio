@@ -1,1 +1,1 @@
-web: python manane.py migarte && gunicorn mainportfolio.wsgi
+web: python mananege.py migarte && gunicorn mainportfolio.wsgi
